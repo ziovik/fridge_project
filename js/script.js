@@ -11,6 +11,8 @@ $(document).ready(function () {
                     if (e.beginTime2 == null) {
                         $('#begin-time1-' + e.fridgeId).val(e.beginTime1);
                         $('#end-time1-' + e.fridgeId).val(e.endTime1);
+                        $('#left' + e.fridgeId + '-btn').attr('disabled', 'disabled');
+                        $('#right' + e.fridgeId + '-btn').removeAttr('disabled');
                     } else {
                         $("#time-table-" + e.fridgeId).before('<tr>' +
                             '<td>' + e.beginTime1 + '</td>' +
@@ -71,6 +73,8 @@ $(document).ready(function () {
                 let updaetedTime = moment().add(40, 'minutes').format('LTS');
                 $('#end-time2-' + fridgeId).val(moment(updaetedTime, "h:mm:ss A").format("HH:mm:ss"));
                 $('left' + fridgeId + '-btn').removeAttr('disabled');
+
+                location.reload();
             },
             error: function (data) {
                 console.log(data);
