@@ -120,7 +120,7 @@ if (!isset($_SESSION['login'])) {
                                                                     Заморозка</h3>
                                                                 <div class="one_third first">
                                                                     <input
-                                                                            id="begin-time1<?=
+                                                                            id="begin-time1-<?=
                                                                             $fridgeId ?>"
                                                                             type="text"
                                                                             class="form-control"
@@ -139,7 +139,7 @@ if (!isset($_SESSION['login'])) {
                                                                 </div>
                                                                 <div class="one_third">
                                                                     <input
-                                                                            id="end-time1<?=
+                                                                            id="end-time1-<?=
                                                                             $fridgeId ?>"
                                                                             type="text"
                                                                             class="form-control"
@@ -156,7 +156,7 @@ if (!isset($_SESSION['login'])) {
                                                                     Разморозка</h3>
                                                                 <div class=" one_third first">
                                                                     <input
-                                                                            id="begin-time2<?=
+                                                                            id="begin-time2-<?=
                                                                             $fridgeId ?>"
                                                                             type="text"
                                                                             class="form-control"
@@ -174,7 +174,7 @@ if (!isset($_SESSION['login'])) {
                                                                 </div>
                                                                 <div class=" one_third">
                                                                     <input
-                                                                            id="end-time2<?=
+                                                                            id="end-time2-<?=
                                                                             $fridgeId ?>"
                                                                             type="text"
                                                                             class="form-control"
@@ -186,38 +186,8 @@ if (!isset($_SESSION['login'])) {
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2">
-                                                        <table>
-                                                            <?php
-                                                            $query1 = "SELECT * FROM fridge_power where fridge_id = '$fridgeId' and status = 1 ";
-                                                            $run1 = mysqli_query($con, $query1);
-                                                            $count1 = mysqli_num_rows($run1);
-                                                            $i = 0;
-                                                            if ($count1 >= 1) {
-                                                                while ($row = mysqli_fetch_array
-                                                                ($run1)) {
-                                                                    $i++;
-                                                                    ?>
+                                                        <table id="time-table-<?= $fridgeId ?>">
 
-                                                                    <tr>
-                                                                        <td><p><?= $i ?></p></td>
-                                                                        <td>
-                                                                            <p><?= $row['begin_time1'] ?></p>
-                                                                        </td>
-                                                                        <td>
-                                                                            <p><?= $row['end_time1'] ?></p>
-                                                                        </td>
-                                                                        <td>
-                                                                            <p><?= $row['begin_time2'] ?></p>
-                                                                        </td>
-                                                                        <td>
-                                                                            <p><?= $row['end_time2'] ?></p>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <?php
-                                                                }
-                                                            }
-                                                            ?>
                                                         </table>
                                                     </td>
                                                 </tr>

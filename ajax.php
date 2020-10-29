@@ -5,11 +5,23 @@ session_start();
 
 if (isset($_SESSION['login'])) {
     $query = "SELECT * FROM fridge_power ORDER BY fridge_id, begin_time1";
-    $run = mysqli_query($con, $sql);
-    if ($run) {
-        $row = mysqli_fetch_assoc($run);
-        $id = $row['action_id'];
+    $result = mysqli_query($con, $query);
 
+    $data = array();
+    $elem = array();
+
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $elem['fridgeId'] = $row['fridge_id'];
+            $elem['userId'] = $row['user_id'];
+            $elem['beginTime1'] = $row['begin_time1'];
+            $elem['endTime1'] = $row['end_time1'];
+            $elem['beginTime2'] = $row['begin_time2'];
+            $elem['endTime2'] = $row['end_time2'];
+
+            array_push($data, $elem);
+        }
+        echo json_encode($data);
     }
 }
 
