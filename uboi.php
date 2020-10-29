@@ -106,19 +106,18 @@ if (!isset($_SESSION['login'])) {
                                         <li class="one_quarter first folder">
                                             <a>
                                                 <img src="images/demo/fridge.png" alt="">
-
                                             </a>
                                             <div class="centered"><?= $row_fridge['name'] ?></div>
                                         </li>
                                         <li class="three_quarter">
-                                            
-                                            <table border="0">
-                                                <tr>
 
+                                            <table border="1">
+                                                <tr>
                                                     <td>
                                                         <div class="modal-body">
                                                             <div class="input-group">
-                                                                <h3 style="text-align: center">Заморозка</h3>
+                                                                <h3 style="text-align: center">
+                                                                    Заморозка</h3>
                                                                 <div class="one_third first">
                                                                     <input
                                                                             id="begin-time1<?=
@@ -133,8 +132,9 @@ if (!isset($_SESSION['login'])) {
                                                                             id="left<?= $fridgeId
                                                                             ?>-btn"
                                                                             data-fridge-id="<?= $fridgeId ?>"
-                                                                            class="btn left_btn"
-                                                                            type="button">+</button>
+                                                                            class="btn left-btn"
+                                                                            type="button">+
+                                                                    </button>
 
                                                                 </div>
                                                                 <div class="one_third">
@@ -152,7 +152,8 @@ if (!isset($_SESSION['login'])) {
                                                     <td>
                                                         <div class="modal-body">
                                                             <div class="input-group">
-                                                                <h3 style="text-align: center">Разморозка</h3>
+                                                                <h3 style="text-align: center">
+                                                                    Разморозка</h3>
                                                                 <div class=" one_third first">
                                                                     <input
                                                                             id="begin-time2<?=
@@ -167,8 +168,9 @@ if (!isset($_SESSION['login'])) {
                                                                             id="right<?= $fridgeId
                                                                             ?>-btn"
                                                                             data-fridge-id="<?= $fridgeId ?>"
-                                                                            class="btn right_btn "
-                                                                            type="button" >+</button>
+                                                                            class="btn right-btn "
+                                                                            type="button">+
+                                                                    </button>
                                                                 </div>
                                                                 <div class=" one_third">
                                                                     <input
@@ -181,30 +183,17 @@ if (!isset($_SESSION['login'])) {
                                                             </div>
                                                         </div>
                                                     </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <table id="time-table-<?$fridgeId?>">
 
+                                                        </table>
+                                                    </td>
                                                 </tr>
                                             </table>
-                                            <table border="0">
-                                                <div class="modal-body">
-                                                    <div class="input-group">
-                                                        <tr>
-                                                            <td><p>1</p></td>
-                                                            <td>
-                                                               <p>2020-10-29 11:39:06</p>
-                                                            </td>
-                                                             <td>
-                                                               <p>2020-10-29 11:39:06</p>
-                                                            </td>
-                                                             <td>
-                                                                <p>2020-10-29 11:39:06</p>
-                                                            </td>
-                                                             <td>
-                                                                <p>2020-10-29 11:39:06</p>
-                                                            </td>
-                                                        </tr>
-                                                    </div>
-                                                </div>
-                                            </table>
+
+
                                         </li>
 
                                     </ul>

@@ -2,8 +2,8 @@
 
 //db details
 $dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = '';
+$dbUsername = 'nd';
+$dbPassword = 'Rjynbytyn_123';
 $dbName = 'fridges';
 
 //Connect and select the database
@@ -15,6 +15,3 @@ if ($con->connect_error) {
 
 // Change character set to utf8
 mysqli_set_charset($con,"utf8");
-
-?>
-
